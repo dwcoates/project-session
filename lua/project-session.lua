@@ -21,6 +21,7 @@ end
 
 if not check_no_save_session_arg() then
   vim.cmd("autocmd BufWritePost * lua save_session()")
+  vim.cmd([[autocmd VimLeavePre * SaveSession]])
   vim.cmd("command! SaveSession lua save_session()")
   vim.cmd("command! ClearSession lua clear_session()")
 end
